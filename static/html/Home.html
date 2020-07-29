@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+    <html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Chat</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/navbar.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/chat.css">
+    </head>
+    <body>
+            <nav>
+                <ul>
+                    <li><a href="Home.html" class="active">Home</a></li>
+                    <li><a href="./AddContact.html">Contact</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="./login.html">Log Out</a></li>
+                </ul>
+            </nav>
+        
+        <div id="chat-container">
+            <div id="search-container">
+                <input type="text" placeholder="Search"/>
+            </div>
+            <div id="conversation-list" >
+                <div class="conversation active" >
+                    <img src="../images/user1_icon.png" alt="user1"/>
+                    <div class="title-text">
+                        user1
+                    </div>
+                    <div class="creae-date">
+                        Jul 22
+                    </div>
+                    <div class="conversation-message">
+                        This is a message
+                    </div>
+                </div>
+                <div class="conversation" >
+                    <img src="../images/user1_icon.png" alt="user2"/>
+                    <div class="title-text">
+                        user2
+                    </div>
+                    <div class="creae-date">
+                        Jul 22
+                    </div>
+                    <div class="conversation-message">
+                        This is a message
+                    </div>
+                </div>
+            </div>
+            <div id="new-message-container">
+                <a href="#">*</a>
+            </div>
+            <div id="chat-title">
+                <span>Rahil B</span>
+                <img src="../images/delete_icon.png" alt="delete converssation"/>
+            </div>
+            <div id="chat-message-list">
+                <div class="message-row you-message">
+                    <div class="message-content">
+                        <div class="message-text">Ok then</div>
+                        <div class="message-time">July 16</div>
+                    </div>
+                </div>
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="../images/user1_icon.png" alt="Rahil B"/>
+                        <div class="message-text">Thats great</div>
+                    <div class="message-time">July 17</div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            <div id="chat-form">
+                <img src="../images/send_icon.png" alt="attach"/>
+                <input type="text" placeholder="type a message"/>
+                
+                <!--img src="/images/send_icon.png" width="40px" height="40px"-->
+            </div>
+        </div>
+        
+    </body>
+</html>
