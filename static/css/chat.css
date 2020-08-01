@@ -14,31 +14,32 @@ html {
     background: linear-gradient(to right,#6157eb 0%,#25acfb83 100%);
     font-size: 10px;
 }
+
 body{
-    display: grid;
-    place-items: center;
+    /*display: grid;*/
+    /*place-items: center;*/
 }
+
 #chat-container{
     display: grid;
+    
     grid: 
         'search-container chat-title' 71px
-        'conversation-list chat-message-list' 1fr
-        'new-message-container chat-form' 78px
-        / 275px 1fr ;
-    min-width: 800px;
-    max-width: 1000;
-    max-height: 800px;
+        'conversation-list chat-message-list' 70%
+        'new-message-container chat-form' 78px / 275px 1fr ;
+    
     width: 100%;
-    height: 90vh;
+    height: 80%;/*100*/
     background: #ffffff;
     border-radius: 10px;
+    
 }
+
 #search-container,
 #conversation-list,
 #new-message-container {
-    background: #005eaaee;
+    background: #ffffff;
 }
-
 
 #search-container{
     display: grid;
@@ -46,13 +47,13 @@ body{
     outline: none;
     font-weight: bold;
     border-radius: 2px;
-    height: 30px;
+    height: 100%;
     border: 0;
     
     padding-left: 20px;
     padding-right: 20px;
     font-size: 1.4rem;
-    background:url(/images/search_icon.png) no-repeat rgba(255,255,255,0.3);
+    background:url(../images/search_icon.png) no-repeat rgba(250, 6, 6, 0.3);
     background-position: 15px center;
     background-size: 20px 20px;
 
@@ -61,7 +62,9 @@ body{
 #search-container input{
     display: grid;
     align-items: center;
-    padding: 0 20px;
+    margin: auto;
+    height: 60%;
+    padding: 10px 20px;
     grid-area: search-container;
     border-radius: 10px 0 0 0;
     box-shadow: 0 1px 3px -1px rgba(0,0,0,0.75);
@@ -83,16 +86,20 @@ body{
     display: grid;
     grid-template-columns: 40px 1fr max-content;
     gap: 10px;
-    color: #dddddd;
+    color: #070000;
     font-size: 1.3rem;
     border-bottom: 1px solid #0469dd;
     padding:20px 20px 20px 15px;
+
 }
 
 .conversation.active,
 .conversation:hover {
-    background: #003a92;
+    color: #fff;
+    background: #c05226a9;
+
 }
+
 
 .conversation:hover {
     cursor: pointer;
@@ -109,7 +116,6 @@ body{
 
     font-weight: bold;
     padding-left: 5px;
-    color: #eeeeee;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -197,7 +203,7 @@ body{
 
 .you-message {
     justify-content: end;
-    
+    height: 10%;
 }
 
 .you-message .message-content {
@@ -207,7 +213,7 @@ body{
 .other-message {
     
     justify-items: start;
-
+    height: 10%;
 }
 
 .other-message .message-content {
@@ -250,7 +256,7 @@ body{
 
 #chat-form{
     display: grid;
-    grid:51px / 32px 2fr;
+    grid:51px / 32px 3fr;
     align-content: center;
     align-items: center;
     gap: 15px;
@@ -259,6 +265,7 @@ body{
     border-top: 1px solid rgba(0,0,0,0.25);
     padding-left: 42px;
     padding-right: 22px;
+    
 }
 
 #chat-form input {

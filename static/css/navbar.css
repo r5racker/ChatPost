@@ -5,23 +5,26 @@ nav{
     height: 80px;
     opacity: 90%;
 }
+
 nav ul{
-    display: inline-flex;
+    width: 100%;
+    gap: 0%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     list-style: none;
-    
 }
 nav ul li{
-    width: 120px;
+    width: 50%;
     margin: 15px;
     padding: 15px;
-    
+    background: #04dd83;
 }
 nav ul li a{
     text-decoration: none;
     color: #ffffff;
     font-size: 15px;
 }
-nav .active,nav ul li:hover{
+.active-nav ,nav ul li:hover{
     background: rgb(0, 51, 160);
     border-radius: 3px;
 }

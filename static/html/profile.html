@@ -3,9 +3,18 @@
         
         <title></title>
         
-        <link rel="stylesheet" href="/static/css/register.css">
+        <link rel="stylesheet" href="../css/register.css">
+        <link rel="stylesheet" href="../css/navbar.css">
     </head>
     <body>
+        <nav>
+                <ul>
+                    <li><a href="Home.html" class="active">Home</a></li>
+                    <li><a href="./Contact.html">Contact</a></li>
+                    <li><a href="../html/profile.html">Profile</a></li>
+                    <li><a href="./login.html">Log Out</a></li>
+                </ul>
+            </nav>
         <form action="action_page.php">
             <fieldset>
             <legend>Profile:</legend>
@@ -17,23 +26,22 @@
               <img src="/static/images/user1_icon.png" height="80px" width="80px" name="picture" id="picture" >
       <br>
                 <label for="fname"><b>First Name</b></label>
-                <input type="text" placeholder="Enter First Name" name="fname" id="fname" required>
+                <input type="text" placeholder="User" name="fname" id="fname"  readonly>
         <br>
                 <label for="lname"><b>Last Name</b></label>
-                <input type="text" placeholder="Enter Last Name" name="lname" id="lname" required>
+                <input type="text" placeholder="user" name="lname" id="lname"  readonly>
         <br>
                 <label for="phone"><b>Phone No.</b></label>
-                <input type="text" placeholder="Enter Phone number" name="phone" id="phone" required>
+                <input type="text" placeholder="123123" name="phone" id="phone"  readonly>
         <br>
                 <label for="email"><b>Email</b></label>
-                <input type="email" placeholder="Enter Email" name="email" id="email" required>
+                <input type="email" placeholder="user@dummy.com" name="email" id="email"  readonly>
         <br>
               <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" id="psw" required>  
+              <input type="password" placeholder="password is strong" name="psw" id="psw"  readonly>  
             
         </fieldset>
           </form>
         
-        <script src="" async defer></script>
     </body>
 </html>
