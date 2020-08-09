@@ -1,38 +1,42 @@
 <!DOCTYPE html>
-<html> 
-    <head>
-        
-        <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="../css/login.css"/>
-    </head>
-    <body>
-        
-
-        <div class="loginbox">
-            <img src="../images/user1_icon.png" class="useravatar"/>
-            <h1>Login</h1>
-            <p>Please fill your details to continue.</p>
-            <form id="login" method="POST" action="./Home.html" >
-                
-                    <!--fieldset form="login">
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+  </head>
+  <body>
+    <div class="loginbox">
+      <img src="../images/user1_icon.png" class="useravatar" />
+      <h1>Login</h1>
+      <p>Please fill your details to continue.</p>
+      <form id="login" method="POST" action="./Home.html">
+        <!--fieldset form="login">
                     
                     <legend><h1>Login</h1></legend-->
-                    
-                    
-                    <label for="uid"><b>User Id:</b></label><br>
-                    <input type="text" id="uid" name="uid" placeholder="Your User Id"><br>
-                    <label for="password"><b> Password: </b></label><br>
-                    <input type="password" id="password" name="password" placeholder="Your Password"><br><br>
-                    <input type="submit" value="Log In" class="registerbtn">
-                    <a href="./Home.html">Log in</a>
-                
-                    <!--/fieldset-->
-                    <a href="./register.html">New User?</a>
-                
-            </form>
-              
-              
-        </div>
-        
-    </body>
+
+        <label for="uid"><b>User Id:</b></label
+        ><br />
+        <input
+          type="text"
+          id="uid"
+          name="uid"
+          placeholder="Your User Id"
+        /><br />
+        <label for="password"><b> Password: </b></label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Your Password"
+        /><br /><br />
+        <input type="submit" id="login" value="Log In" class="registerbtn" />
+        <a href="./Home.html">Log in</a>
+
+        <!--/fieldset-->
+        <a href="./register.html">New User?</a>
+      </form>
+
+      <script src="../scripts/LoginValidation.js"></script>
+    </div>
+  </body>
 </html>
