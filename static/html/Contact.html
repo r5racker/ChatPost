@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Contacts</title>
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" type="text/css" href="../css/contact-list.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="active-nav"><a href="./Home.html" >Home</a></li>
+            <li><a href="./Contact.html">Contact</a></li>
+            <li><a href="../html/profile.html">Profile</a></li>
+            <li><a href="./login.html">Log Out</a></li>
+        </ul>
+    </nav>
+    
+    <div class="contact-list">
+        <div class="row-header">
+            <div class="col">Contacts</div> <div class="col">phone No. | email</div>
+        </div>
+        <div class="row">
+            <div class="col">User2</div><div class="col">user.2@gmail.com</div>
+        </div>
+        <div class="row">
+            <div class="col">User3</div><div class="col">user.3@gmail.com</div>
+        </div>
+        <div class="row">
+            <div class="col">User4</div><div class="col">9898123456</div>
+        </div>
+    </div>
+    <div class="column">
+    
+        <!--search result-->
+        <div class="search-contact-list">
+            <div class="row-header">
+                <div class="col">Contacts</div> <div class="col">phone No. | email</div><div class="col">Action</div>
+            </div>
+            <div class="row">
+                <div class="col">None</div>
+            </div>
+            
+        </div>
+        <div class="column">
+        
+
+
+        <!--fieldset form="login"-->
+
+        <div class="container">
+            <form id="login" method="POST" action="./Home.html" ></form>
+            <h1>Search new contact</h1>
+            <!--legend><h1>Search new contact</h1></legend-->
+            
+            <p>Please fill any of the details to search contact</p>
+            <label for="uid"><b>user id:</b></label><br>
+            <input type="text" id="uid" name="uid" placeholder="user id"><br>
+            <label for="contact"><b> Phone No. or email </b></label><br>
+            <input type="text" id="contact" name="contact" placeholder="contact No. or email"><br><br>
+            <input type="submit" value="Request" class="registerbtn">
+            </form>
+        </div>
+        <!--/fieldset-->  
+    
+    </div>
+</body>
+</html>
