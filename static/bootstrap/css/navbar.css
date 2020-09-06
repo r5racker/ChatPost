@@ -1,0 +1,34 @@
+nav {
+  background: rgb(97, 95, 95);
+  text-align: center;
+  width: 100%;
+  height: 80px;
+  opacity: 80%;
+}
+
+nav ul {
+  width: 100%;
+  gap: 0%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  list-style: none;
+}
+
+nav ul li {
+  width: 50%;
+  margin: 15px;
+  padding: 15px;
+  background: #04dd83;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.active-nav,
+nav ul li:hover {
+  background: #1876c4;
+  border-radius: 3px;
+}
