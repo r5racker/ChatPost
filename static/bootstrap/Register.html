@@ -22,6 +22,63 @@
                     Welcome to ShareNChat.
                     You are few steps away.
                 </p>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                    Help
+                </button>
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">We are here for you</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                Need Help?<br>
+                                contact us at help@demo.co.in
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal" id="PrivacyPolicyModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Privacy Policy</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                Your Privacy is our first concern.<br>
+                                All the data is stored in our fully secure servers inside the data store of ShareNChat
+                                in your country.
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
             <div class="col-md-7 signinbox">
                 <form action="#">
@@ -100,7 +157,9 @@
                                 id="psw-repeat" required>
                         </div>
                     </div>
-                    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                    <p>By creating an account you agree to our <a href="" data-toggle="modal"
+                            data-target="#PrivacyPolicyModal">Terms &
+                            Privacy</a>.</p>
                     <button type="submit" class="registerbtn">Register</button>
                 </form>
                 <br>
@@ -111,7 +170,10 @@
         </div>
 
     </div>
+    <script src="script/jQuery.js"></script>
     <script src="script\bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
 </body>
 
 </html>

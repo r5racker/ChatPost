@@ -1,6 +1,7 @@
 function StartChat(id) {
   document.getElementById("chatPanel").removeAttribute("style");
   document.getElementById("startPanel").setAttribute("style", "display:none");
+  document.getElementById("chatList").classList.add("d-none", "d-md-block");
 }
 
 function showChatList() {
