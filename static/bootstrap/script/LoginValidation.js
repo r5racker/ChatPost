@@ -1,12 +1,14 @@
 (function () {
   "use strict";
   document.getElementById("uid").addEventListener("input", validateUid);
+
   function validateUid(event) {
     let uid_value = document.getElementById("uid").value;
     console.log(uid_value);
   }
 
   document.getElementById("login").addEventListener("submit", validateForm);
+
   function validateForm(event) {
     event.preventDefault();
     console.log("submitting");
