@@ -1,0 +1,10 @@
+[
+    {"id":1,"senderId":1,"receiverId":2,"messageText":"Hey there!!","messageTime":"Oct 20 12:10 Am"},
+    {"id":2,"senderId":2,"receiverId":1,"messageText":"hi!!","messageTime":"Oct 20 12:11 Am"},
+    {"id":3,"senderId":1,"receiverId":2,"messageText":"How's project going!!","messageTime":"Oct 20 12:12 Am"},
+    {"id":4,"senderId":2,"receiverId":1,"messageText":"Its progressing late!!","messageTime":"Oct 20 12:13 Am"},
+    {"id":5,"senderId":1,"receiverId":3,"messageText":"Boss the project is late!!","messageTime":"Oct 20 12:14 Am"},
+    {"id":6,"senderId":3,"receiverId":1,"messageText":"By how much?","messageTime":"Oct 20 12:15 Am"},
+    {"id":7,"senderId":1,"receiverId":3,"messageText":"By two weeks","messageTime":"Oct 20 12:16 Am"},
+    {"id":8,"senderId":3,"receiverId":1,"messageText":"Ok keep me updated","messageTime":"Oct 20 12:17 Am"}
+]

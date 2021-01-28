@@ -1,0 +1,243 @@
+<div class="body">
+  <div class="outer-container">
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <a href="home" class="navbar-brand">ShareNChat</a> <!-- <a class="navbar-brand" [routerLink]="['home']">ShareNChat</a> -->
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item ">
+            <a class="nav-link" href="profile">Profile</a><!-- <a class="nav-link" [routerLink]="['profile']">Profile</a> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact">Contacts</a> <!-- <a class="nav-link" [routerLink]="['contact']">Conact</a> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="logout()">Log Out</a>
+          </li>
+  
+        </ul>
+      </div>
+    </nav>
+
+    <div class="top">
+
+    </div>
+
+    <div class="container-fluid bg-white shadow-lg rounded chatbox">
+
+      <div class="row h-100 ">
+        <div id="chatList" class="col-md-4 pr-0 d-none d-md-block">
+          <div class="card h-100">
+            <div class="card-header">
+              <div class="row">
+                <div class="sm-1 col-sm-1 col-md-1 d-md-none">
+                  <i class="fas fa-arrow-left fa-2x d-md-none" style="cursor: pointer;" (click)="hideChatList()"></i>
+                </div>
+                <div class="col-9 col-md-10">
+                  <img src="assets/images/user1_icon.png" class="profile-pic" />
+                </div>
+                <div class="col-2 col-md-2">
+                  <!--div class="row">
+                    <div class="col-4">
+                      <a href="profile.html" class="btn btn-light">Profile</a>
+                    </div>
+                    <div class="col-4">
+                      <a href="Contact.html" class="btn btn-light">Contact</a>
+                    </div>
+                    <div class="col-4">
+                      <a href="Register-login.html" class="btn btn-light">Log Out</a>
+                    </div>
+                  </div-->
+                </div>
+              </div>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" style="background-color: #f8f8f8;">
+                <input type="text" id="search-box" placeholder="search chat" (input)="filterChatList()"
+                  class="form-control form-element-rounded" />
+              </li>
+
+              <li *ngFor="let chat of messagesService.ChatList" (click)="StartChat(chat.id)" class="list-group-item list-group-item-action conversation">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img src="{{chat.imgUrl}}" class="contact-pic" />
+                  </div>
+                  <div class="col-md-10" style="cursor: pointer;">
+                    <div class="contact-name">{{chat.name}} <span *ngIf="chat.newArrival" class="badge badge-secondary">New</span>  </div>
+                    <div class="below-name">{{chat.lastMessage}}</div>
+                  </div>
+                </div>
+              </li>
+              <!--
+              <li (click)="StartChat(2)" class="list-group-item list-group-item-action conversation">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img src="assets/images/user1_icon.png" class="contact-pic" />
+                  </div>
+                  <div class="col-md-10" style="cursor: pointer;">
+                    <div class="contact-name">Friend2</div>
+                    <div class="below-name">Hey there!!</div>
+                  </div>
+                </div>
+              </li>
+
+              <li (click)="StartChat(3)" class="list-group-item list-group-item-action conversation">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img src="assets/images/user1_icon.png" class="contact-pic" />
+                  </div>
+                  <div class="col-md-10" style="cursor: pointer;">
+                    <div class="contact-name">Friend3</div>
+                    <div class="below-name">Have a nice day</div>
+                  </div>
+                </div>
+              </li>
+
+              <li (click)="StartChat(4)" class="list-group-item list-group-item-action conversation">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img src="assets/images/user1_icon.png" class="contact-pic" />
+                  </div>
+                  <div class="col-md-10" style="cursor: pointer;">
+                    <div class="contact-name">Friend4</div>
+                    <div class="below-name">hey</div>
+                  </div>
+                </div>
+              </li>
+
+            -->
+            </ul>
+          </div>
+        </div>
+        <div id="ChatBody" class="col-md-8 pl-0">
+          <div class="card h-100" id="chatPanel" style="display: none;">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-1 col-sm-1 col-md-1  d-lg-none">
+                  <i class="fas fa-list"></i>
+                </div>
+                <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                  <img src="assets/images/user1_icon.png" class="profile-pic" />
+                </div>
+                <div class="col-3 col-sm-3 col-md-2 col-lg-4">
+                  <div class="contact-name">{{userService.DestinationInfo.FName}}</div>
+                  <div class="below-name">last seen {{userService.DestinationInfo.lastSeen|date}}
+                  </div>
+                </div>
+                <div class="col-2 col-sm-2 col-md-3 col-lg-3">
+                  <div class="collapse" id="inchat-search"><input type="text" placeholder="Search chat"
+                      id="inchat-pattern" class="form-control" /></div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4 col-lg-3 icons">
+                  <i class="fas fa-search" data-toggle="collapse" data-target="#inchat-search"
+                    title="Search Messages"></i>
+
+                  <i class="fas fa-paperclip ml-4" data-toggle="modal" data-target="#fileAttachmentModal"
+                    title="Attach File"></i>
+                  <!--File attachment modal-->
+                  <div class="modal" id="fileAttachmentModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Attach File</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <form method="POST" enctype="multipart/form-data" action="#">
+                            <input type="file" title="Select File" class="form-control" />
+                            <input type="submit" value="Send" class="form-control btn btn-primary" />
+                          </form>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modal end-->
+
+                  <i class="fas fa-ellipsis-v ml-4" data-toggle="dropdown" title="More"></i>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Info</a>
+                    <a class="dropdown-item" href="#">Block</a>
+                    <a class="dropdown-item" href="#">Clear Chat</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body" id="card-body-messages">
+              <div *ngIf="messagesService.Messages.length==0" class="spinner-grow text-primary"></div>
+              <!--chat template loop -->
+              <div *ngFor="let msg of messagesService.Messages" id="chat-message-list">
+                <div class="row" *ngIf="msg.receiverId==userService.userId" >
+                  <div class="col-2 col-sm-2 col-md-1">
+                    <img class="chat-pic" src="{{userService.DestinationInfo.imageUrl}}" />
+                  </div>
+                  <div class="col-6 col-sm-7 col-md-7">
+                    <p class="receive">
+                      {{msg.messageText}}
+                      <br>
+                      <span class="chat-time float-right">{{msg.messageTime}}</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="row" *ngIf="msg.senderId==userService.userId" >
+                  <div class="col-6 col-sm-7 col-md-7">
+                    <p class="sent float-right">
+                      {{msg.messageText}}
+                      <br>
+                      <span class="chat-time float-right">{{msg.messageTime}}</span>
+                    </p>
+                  </div>
+                  <div class="col-2 col-sm-2 col-md-1">
+                    <img class="chat-pic" src="{{userService.currentUserInfo.imageUrl}}" />
+                  </div>
+                </div>
+                <!--Chat ends -->
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="row">
+                <div class="col-2 col-md-1 col-lg-1">
+                  <i class="fas fa-grin fa-2x"></i>
+                </div>
+                <div class="col-8 col-md-10">
+                  <form (ngSubmit)="sendMessage">
+                  <input  placeholder="Type Message" name="MessageTextBox" [(ngModel)]="MessageTextBox"
+                    class="form-control form-element-rounded" />
+                  </form>
+                </div>
+                <div class="col-2 col-md-1">
+                  <i (click)="sendMessage($event)" class="fas fa-arrow-alt-circle-right fa-2x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="startPanel" class="card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-comments mt-5" style="font-size: 50px;"></i>
+              <h3>Select a friend from left to start chatting</h3>
+              <button class="btn btn-link d-md-none" (click)="showChatList()">View Chats </button>
+              <div class="alert alert-info alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Hello!</strong> Welcome to ShareNChat.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

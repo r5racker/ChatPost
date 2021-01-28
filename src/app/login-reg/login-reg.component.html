@@ -1,0 +1,221 @@
+    <!-- LOCAL
+    <link rel="stylesheet" href="bcss/bootstrap.min.css">
+        -->
+    <!-- CDN-->
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"-->
+    <div class="body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h1 class="text-left">ShareNChat</h1>
+                <div class="text-left para">
+                    Welcome to ShareNChat.<br>
+                    You are few steps away.
+                    <div class="toggler" id='toggle'>
+                        <button id='togglecheck' class="btn btn-primary">Sign up</button>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                    Help
+                </button>
+
+                <!--p>
+                    <h4>
+                        Already have an account?<br>
+                        <a href="login.html" style="color: white;">
+                            <b><u> Sign in :)
+                                </u></b>
+                        </a>
+                    </h4>
+                </p-->
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">We are here for you</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                Need Help?<br>
+                                contact us at help@demo.co.in
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal" id="PrivacyPolicyModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Privacy Policy</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                Your Privacy is our first concern.<br>
+                                All the data is stored in our fully secure servers inside the data store of ShareNChat
+                                in your country.
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-7 formbox">
+
+                <div class="loginbox">
+                    <img src="assets/images/user1_icon.png" class="useravatar" />
+                    <h1>Login</h1>
+                    <p>Please fill your details to continue.</p>
+                    <form id="login-form" method="POST" action="./home.html">
+                        <div class="form-group">
+                            <label for="uid"><b>User Id:</b></label><br />
+                            <input class="form-control" type="text" id="uid" name="uid" placeholder="Your User Id"
+                                required [(ngModel)]="LoginId"/>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password"><b> Password: </b></label><br />
+                            <input class="form-control" type="password" id="password" name="password"
+                                placeholder="Your Password" required [(ngModel)]="LoginPass"/>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <button id="login" value="Log In" class="registerbtn" (click)="login()">Login</button>
+
+                        <a href="home.html">Log in</a>
+                    </form>
+                    <script src="script/LoginValidation.js"></script>
+                </div>
+                <!--Registeration box-->
+                <div class="signupbox"  style="display: none;">
+                    <form [formGroup]="registerForm" (ngSubmit)="Register()" enctype="multipart/form-data">
+                        <h1>Register</h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="picture"><b>Picture (.png)</b></label>
+                                <div class="-invalid-feedback" id=""></div>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-control" (change)="uploadImg($event)" type="file" placeholder="Profile picture" name="picture"
+                                    id="picture" ><!-- formControlName="imageUrl"-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="fname"><b>First Name</b></label>
+                            </div>
+
+                            <div class="col-md-8">
+                                <input class="form-control"
+                                [ngClass]="{'is-invalid':registerForm.get('FName').touched && registerForm.get('FName').invalid}" type="text" placeholder="Enter First Name" name="fname"
+                                    id="fname" formControlName="FName">
+                                    <span class="invalid-feedback">First Name cannot be empty and can contain only alphabets<br></span>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="lname"><b>Last Name</b></label>
+                                <div id="lname_invalid_msg">* </div>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" placeholder="Enter Last Name" name="lname"
+                                    id="lname" formControlName="LName"
+                                    [ngClass]="{'is-invalid':registerForm.get('LName').touched && registerForm.get('LName').invalid}"
+                                    >
+                                    <span class="invalid-feedback">Last Name cannot be empty and can contain only alphabets</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="phone"><b>Phone No.</b></label>
+                                <div id="phone_invalid_msg">* </div>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" placeholder="Enter Phone number" name="phone"
+                                    id="phone" formControlName="phone" [ngClass]="{'is-invalid':registerForm.get('phone').touched && registerForm.get('phone').invalid}">
+                                    <span class="invalid-feedback">Invalid Phone</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="email"><b>Email</b></label>
+                                <div id="email_invalid_msg">* </div>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="email" placeholder="Enter Email" name="email"
+                                    id="email" formControlName="email" [ngClass]="{'is-invalid':registerForm.get('email').touched && registerForm.get('email').invalid}">
+                                    <span class="invalid-feedback">Invalid Email</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="psw"><b>Password</b></label>
+                                <div id="psw_invalid_msg">* </div>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="password" placeholder="Enter Password" name="psw"
+                                    id="psw" formControlName="password" [ngClass]="{'is-invalid':registerForm.get('password').touched && registerForm.get('password').invalid}">
+                                    <span class="invalid-feedback">
+                                        <span *ngIf="registerForm.get('password').hasError('required')">Password cannot be blak</span>
+                                    <span 
+                                    *ngIf="registerForm.get('password').hasError('minlength')" >Please provide a Password with minimum length {{registerForm.get('password').errors.minlength.requiredLength}}</span>
+                                    </span>
+                                    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="psw-repeat"><b>Repeat Password</b></label>
+                                <div id="psw-repeat_invalid_msg">* </div>
+                            </div>
+                            <div class="col-md-8">
+
+                                <input class="form-control" type="password" placeholder="Repeat Password"
+                                    name="psw-repeat" id="psw-repeat" formControlName="confPassword" [ngClass]="{'is-invalid':registerForm.get('confPassword').dirty && registerForm.get('confPassword').invalid}">
+                                    <span class="invalid-feedback">Passwords must match</span>
+                            </div>
+                        </div>
+                        <p>By creating an account you agree to our <a href="" data-toggle="modal"
+                                data-target="#PrivacyPolicyModal">Terms &
+                                Privacy</a>.</p>
+                        <input type="submit" value="Register" id="register" class="registerbtn" [disabled]="registerForm.invalid">
+                    </form>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

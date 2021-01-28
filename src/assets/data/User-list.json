@@ -1,0 +1,6 @@
+[
+    {"id":1,"name":"User1","email":"user1@g.c","userImgUrl":"/assets/images/user1_icon.png"},
+    {"id":2,"name":"User2","email":"user2@g.c","userImgUrl":"/assets/images/user1_icon.png"},
+    {"id":3,"name":"User3","email":"user3@g.c","userImgUrl":"/assets/images/user1_icon.png"},
+    {"id":4,"name":"User4","email":"user4@g.c","userImgUrl":"/assets/images/user1_icon.png"}
+]

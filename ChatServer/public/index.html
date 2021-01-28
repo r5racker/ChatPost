@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Node demo</title>
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <input type="text" id="sendMsg">
+        <button name="Send" id="sendBtn">Send</button>
+        <script>
+            const socket = io()
+
+            const tB=document.getElementById("sendMsg")
+            const sBtn = document.getElementById("sendBtn");
+            
+            
+            socket.on("MessageServerToClient",(msg) =>{
+                console.log("client Received:",msg)
+            })
+            console.log("btton",sBtn)
+            
+            sBtn.onclick=function(e){
+                console.log("sending message")
+                socket.emit("MessageClientToServer",tB.value
+                );
+                tB.value="";    
+            }
+        </script>
+    </body>
+</html>
